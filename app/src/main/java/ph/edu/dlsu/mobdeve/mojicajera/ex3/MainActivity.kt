@@ -59,5 +59,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        videoAdapter.onButtonClick = {
+            val intent = Intent (this, Creator::class.java)
+            intent.putExtra("Creator", it)
+            startActivity(intent)
+        }
+
     }
 }

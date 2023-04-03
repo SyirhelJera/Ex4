@@ -3,6 +3,7 @@ package ph.edu.dlsu.mobdeve.mojicajera.ex3
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class VideoAdapter(private val videoList:ArrayList<VideoContent>)
     :RecyclerView.Adapter<VideoAdapter.VideoViewHolder>() {
 
+    var onButtonClick : ((VideoContent) -> Unit?)? = null
     var onItemClick : ((VideoContent) -> Unit)? = null
 
     class VideoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -31,6 +33,11 @@ class VideoAdapter(private val videoList:ArrayList<VideoContent>)
         holder.videoCreator.text = video.videoCreator
         holder.videoDuration.text = video.videoDuration
 
+        var creatorButton = holder.itemView.findViewById<Button>(R.id.creatorButton)
+
+        creatorButton.setOnClickListener{
+            onButtonClick?.invoke(video)
+        }
 
         holder.itemView.setOnClickListener{
             onItemClick?.invoke(video)
