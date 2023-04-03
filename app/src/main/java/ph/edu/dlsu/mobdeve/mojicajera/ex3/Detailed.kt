@@ -11,7 +11,7 @@ class Detailed : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detailed)
 
-        val video = intent.getParcelableExtra<VideoContent>("Video")
+        val video = intent.getParcelableExtra<VideoModel>("Video")
         if (video !=null){
             val thumbnail : ImageView = findViewById(R.id.thumbnail)
             val videoTitle : TextView = findViewById(R.id.videoTitle)

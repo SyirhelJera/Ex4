@@ -15,7 +15,7 @@
         android:background="#282828"
         android:gravity="center"
         android:padding="20dp"
-        android:text="Exercise 3 - Jera, Syirhel Vincent"
+        android:text="Exercise 4 - Jera, Syirhel Vincent"
         android:textColor="@color/white"
 
         android:textStyle="bold"

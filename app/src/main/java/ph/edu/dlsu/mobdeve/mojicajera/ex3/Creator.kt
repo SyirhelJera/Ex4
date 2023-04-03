@@ -10,7 +10,7 @@ class Creator : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_creator)
 
-        val video = intent.getParcelableExtra<VideoContent>("Creator")
+        val video = intent.getParcelableExtra<VideoModel>("Creator")
         if (video !=null){
             val thumbnail : ImageView = findViewById(R.id.thumbnail)
             val videoTitle : TextView = findViewById(R.id.videoTitle)

@@ -3,7 +3,11 @@ package ph.edu.dlsu.mobdeve.mojicajera.ex3
 import android.os.Parcel
 import android.os.Parcelable
 
-data class VideoContent (val thumbnail: Int, val videoTitle :String, val videoCreator: String, val videoDuration: String) : Parcelable{
+data class VideoModel (
+    val thumbnail: Int,
+    val videoTitle :String,
+    val videoCreator: String,
+    val videoDuration: String) : Parcelable{
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString()!!,
@@ -25,12 +29,12 @@ data class VideoContent (val thumbnail: Int, val videoTitle :String, val videoCr
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<VideoContent> {
-        override fun createFromParcel(parcel: Parcel): VideoContent {
-            return VideoContent(parcel)
+    companion object CREATOR : Parcelable.Creator<VideoModel> {
+        override fun createFromParcel(parcel: Parcel): VideoModel {
+            return VideoModel(parcel)
         }
 
-        override fun newArray(size: Int): Array<VideoContent?> {
+        override fun newArray(size: Int): Array<VideoModel?> {
             return arrayOfNulls(size)
         }
     }

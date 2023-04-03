@@ -8,11 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class VideoAdapter(private val videoList:ArrayList<VideoContent>)
+class VideoAdapter(private val videoList:ArrayList<VideoModel>)
     :RecyclerView.Adapter<VideoAdapter.VideoViewHolder>() {
 
-    var onButtonClick : ((VideoContent) -> Unit?)? = null
-    var onItemClick : ((VideoContent) -> Unit)? = null
+    var onButtonClick : ((VideoModel) -> Unit?)? = null
+    var onItemClick : ((VideoModel) -> Unit)? = null
 
     class VideoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val thumbnail : ImageView = itemView.findViewById(R.id.thumbnail)
